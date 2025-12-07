@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Consultoria Administrativa — [Nome da sua princesa]</title>
+  <meta name="description" content="Serviços de consultoria administrativa e gestão — contato, portfólio e agendamento." />
+
+  <!-- ====== CSS (separável em styles.css) ====== -->
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --accent:#0f62fe; /* azul profissional */
+      --muted:#6b7280;
+      --radius:14px;
+      --max:1100px;
+      --shadow: 0 6px 20px rgba(12,18,30,0.08);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#ffffff);color:#111827}
+    .wrap{max-width:var(--max);margin:32px auto;padding:20px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px;box-shadow:var(--shadow)}
+    h1{font-size:20px;margin:0}
+    p.lead{margin:2px 0 0;color:var(--muted)}
+
+    nav{display:flex;gap:12px}
+    nav a{padding:10px 14px;border-radius:10px;text-decoration:none;color:var(--muted);font-weight:600}
+    nav a.primary{background:transparent;border:1px solid rgba(15,98,254,0.08);color:var(--accent)}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center;margin-top:24px}
+    .card{background:var(--card);padding:22px;border-radius:var(--radius);box-shadow:var(--shadow)}
+
+    .hero-left h2{font-size:28px;margin:0 0 8px}
+    .hero-left p{color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;gap:12px}
+    .btn{padding:12px 18px;border-radius:12px;border:none;cursor:pointer;font-weight:700}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-outline{background:transparent;border:1px solid rgba(15,98,254,0.12);color:var(--accent)}
+
+    /* photo card */
+    .profile-photo{width:100%;height:420px;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .profile-photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* grid sections */
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+    .service{display:flex;flex-direction:column;gap:8px}
+    .service h3{margin:0;font-size:16px}
+    .service p{margin:0;color:var(--muted);font-size:14px}
+
+    /* gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .gallery img{width:100%;height:120px;object-fit:cover;border-radius:10px}
+
+    /* contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .contact-grid a{display:flex;align-items:center;gap:10px;padding:12px;border-radius:10px;text-decoration:none;background:linear-gradient(180deg,#fff,#fafbff);border:1px solid rgba(15,98,254,0.06)}
+
+    footer{margin-top:28px;padding:18px 0;text-align:center;color:var(--muted);font-size:14px}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .profile-photo{height:320px}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+      .contact-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:520px){
+      .grid-3{grid-template-columns:1fr}
+    }
+
+    /* small util */
+    .muted{color:var(--muted);font-size:13px}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:#eef2ff;color:var(--accent);font-weight:700}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">PR</div>
+        <div>
+          <h1>[Nome da Princesa]</h1>
+          <p class="lead">Consultoria Administrativa & Gestão | Profissional e moderna</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#servicos">Serviços</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#blog">Blog</a>
+        <a href="#contato" class="primary">Contato</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-left card">
+        <span class="pill">Consultoria • Planejamento • Treinamento</span>
+        <h2>Ajudo profissionais e pequenas empresas a organizarem processos e crescerem com eficiência</h2>
+        <p>Serviços de administração, gestão financeira, planejamento estratégico, treinamento de equipe e organização documental.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#contato">Agendar Consulta</a>
+          <a class="btn btn-outline" href="#servicos">Ver Serviços</a>
+        </div>
+
+        <div class="grid-3" style="margin-top:18px">
+          <div class="service card">
+            <h3>Gestão Financeira</h3>
+            <p class="muted">Fluxo de caixa, análise de custos e orçamentos.</p>
+          </div>
+          <div class="service card">
+            <h3>Organização de Processos</h3>
+            <p class="muted">Mapeamento de atividades e padronização.</p>
+          </div>
+          <div class="service card">
+            <h3>Treinamento</h3>
+            <p class="muted">Capacitação de equipes e consultoria personalizada.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====== Photo: substitua 'photo.jpg' pela foto real que você enviar ====== -->
+      <aside class="card profile-photo">
+        <img src="photo.jpg" alt="Foto da profissional - substituir por arquivo real" />
+      </aside>
+    </section>
+
+    <!-- ====== Portfólio / Galeria ====== -->
+    <section id="portfolio" class="card" style="margin-top:18px">
+      <h3>Portfólio & Projetos</h3>
+      <p class="muted">Alguns trabalhos, treinamentos e resultados.</p>
+      <div class="gallery" style="margin-top:12px">
+        <img src="gallery1.jpg" alt="Projeto 1" />
+        <img src="gallery2.jpg" alt="Projeto 2" />
+        <img src="gallery3.jpg" alt="Projeto 3" />
+      </div>
+    </section>
+
+    <!-- ====== Blog ====== -->
+    <section id="blog" class="card" style="margin-top:18px">
+      <h3>Blog & Dicas</h3>
+      <p class="muted">Artigos rápidos sobre gestão e organização.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px">
+        <div class="card" style="padding:12px"><strong>Título do Post 1</strong><p class="muted">Resumo curto do post...</p></div>
+        <div class="card" style="padding:12px"><strong>Título do Post 2</strong><p class="muted">Resumo curto do post...</p></div>
+        <div class="card" style="padding:12px"><strong>Título do Post 3</strong><p class="muted">Resumo curto do post...</p></div>
+      </div>
+    </section>
+
+    <!-- ====== Contato / Agendamento ====== -->
+    <section id="contato" class="card" style="margin-top:18px">
+      <h3>Contato & Agendamento</h3>
+      <p class="muted">Entre em contato por WhatsApp, e-mail ou redes sociais.</p>
+      <div class="contact-grid" style="margin-top:12px">
+        <a href="https://wa.me/5511999999999" target="_blank">📱 WhatsApp — (11) 99999-9999</a>
+        <a href="mailto:contato@exemplo.com">✉️ Email — contato@exemplo.com</a>
+      </div>
+
+      <form style="margin-top:12px;display:grid;gap:8px">
+        <input placeholder="Nome" style="padding:12px;border-radius:8px;border:1px solid #e6e9ef" />
+        <input placeholder="Telefone ou WhatsApp" style="padding:12px;border-radius:8px;border:1px solid #e6e9ef" />
+        <textarea placeholder="Mensagem / Serviço desejado" style="padding:12px;border-radius:8px;border:1px solid #e6e9ef"></textarea>
+        <button class="btn btn-primary" type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <footer>
+      © <span id="ano"></span> — [Nome da Princesa] • Consultoria Administrativa
+    </footer>
+  </div>
+
+  <script>
+    // troca rápida: atualiza o ano no rodapé
+    document.getElementById('ano').textContent = new Date().getFullYear();
+
+    // instrução para deploy:
+    // 1) substitua 'photo.jpg' por sua foto real na mesma pasta ou use o caminho completo.
+    // 2) substitua gallery1.jpg/2/3 por amostras reais.
+    // 3) para transformar em site WordPress: use essa estrutura como tema estático ou copie o conteúdo nas páginas.
+    // 4) para GitHub Pages: coloque os arquivos (index.html + imagens) em um repositório e ative Pages.
+  </script>
+</body>
+</html>
