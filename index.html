@@ -164,6 +164,26 @@
     }
   </style>
 </head>
+  
+/* Banner de identidade */
+.brand-banner {
+  max-width: var(--max);
+  margin: 16px auto 0;
+  padding: 0 20px;
+}
+
+.brand-banner img {
+  width: 100%;
+  max-height: 140px;
+  object-fit: contain;
+  display: block;
+}
+  
+@media (max-width: 600px) {
+  .brand-banner img {
+    max-height: 100px;
+  }
+}
 
 <body>
   <div class="wrap">
@@ -271,6 +291,7 @@ Vamos construir sua melhor versão na prática?...</p>
 
 </body>
 </html>
+
 
 
 
