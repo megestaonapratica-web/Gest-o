@@ -103,52 +103,127 @@
 
     .btn {
       padding: 12px 18px;
-      border-ra
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+    }
 
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
 
+    .profile-photo {
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 4 / 5;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #eee;
+    }
 
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
 
+    footer {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 14px;
+    }
 
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; }
+    }
 
+    @media (max-width: 600px) {
+      .brand-banner img { max-height: 90px; }
+      header { justify-content: center; }
+    }
+  </style>
+</head>
 
+<body>
 
+  <!-- BANNER -->
+  <section class="brand-banner">
+    <img src="banner-me.png" alt="ME - Gestão na Prática">
+  </section>
 
+  <div class="wrap">
 
+    <!-- MENU -->
+    <header>
+      <nav>
+        <a href="#sobre">Sobre mim</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#blog">Blog</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#contato" class="primary">Contato</a>
+      </nav>
+    </header>
 
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left card">
+        <span>Organização • Clareza • Produtividade</span>
+        <h2>Passo a passo para organizar seu negócio na prática</h2>
+        <p>Dicas de organização e produtividade, orientações práticas para MEIs e pequenos negócios, consultorias acessíveis e humanizadas.</p>
 
+        <div class="cta">
+          <a class="btn btn-primary" href="#contato">Agendar Consulta</a>
+        </div>
+      </div>
 
+      <aside class="profile-photo card">
+        <img src="logo-maria.jpg" alt="Maria Eduarda">
+      </aside>
+    </section>
 
+    <!-- SEÇÕES -->
+    <section id="sobre" class="card" style="margin-top:18px">
+      <h3>Sobre mim</h3>
+      <p>Olá! Eu sou Maria Eduarda...</p>
+    </section>
 
+    <section id="servicos" class="card" style="margin-top:18px">
+      <h3>Serviços</h3>
+    </section>
 
+    <section id="blog" class="card" style="margin-top:18px">
+      <h3>Blog</h3>
+    </section>
 
+    <section id="depoimentos" class="card" style="margin-top:18px">
+      <h3>Depoimentos</h3>
+    </section>
 
+    <section id="contato" class="card" style="margin-top:18px">
+      <h3>Contato</h3>
+      <a href="mailto:me.gestaonapratica@gmail.com">✉️ me.gestaonapratica@gmail.com</a>
+    </section>
 
+    <footer>
+      © <span id="ano"></span> — ME - Gestão na Prática
+    </footer>
+  </div>
 
+  <script>
+    document.getElementById("ano").textContent = new Date().getFullYear();
+  </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>
 
 
 
