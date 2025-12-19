@@ -184,6 +184,24 @@
   color: var(--accent);
 }
 
+    /* Animações suaves */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+}
+
+.btn {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
 .blog-em-breve {
   display: inline-block;
   margin-top: 8px;
@@ -512,6 +530,7 @@ Seja para organizar sua vida, sua rotina, seus estudos ou suas finanças leves, 
 
 </body>
 </html>
+
 
 
 
