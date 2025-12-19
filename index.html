@@ -158,6 +158,37 @@
     @media (max-width: 520px) {
       .grid-3 { grid-template-columns: 1fr; }
     }
+    .sobre-container {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.sobre-foto img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  object-fit: cover;
+}
+
+.sobre-texto p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Responsivo */
+@media (max-width: 720px) {
+  .sobre-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .sobre-foto img {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
   </style>
 </head>
 
@@ -272,6 +303,7 @@ Seja para organizar sua vida, sua rotina, seus estudos ou suas finanças leves, 
 </body>
 </html>
     
+
 
 
 
