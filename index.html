@@ -1,4 +1,4 @@
-<!doctype html>
+    <!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
@@ -13,6 +13,7 @@
       --secondary: #E5DFD2;
       --accent: #C1A167;
       --muted: #9E9586;
+      --text-strong: #8C837F;
       --radius: 14px;
       --max: 1100px;
       --shadow: 0 6px 20px #D6C9B8;
@@ -29,36 +30,43 @@
 
     .wrap {
       max-width: var(--max);
-      margin: 0 auto;
+      margin: 32px auto;
       padding: 20px;
     }
 
-    /* ===== BANNER DE IDENTIDADE ===== */
-    .brand-banner {
-      max-width: var(--max);
-      margin: 20px auto;
-      padding: 0 20px;
-    }
-
-    .brand-banner img {
-      width: 100%;
-      height: auto;
-      max-height: 110px;
-      object-fit: contain;
-      display: block;
-    }
-
-    /* ===== HEADER ===== */
     header {
       display: flex;
-      justify-content: flex-end;
-      margin-top: 10px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
     }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+   .logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+    
+    .logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
     nav {
       display: flex;
       gap: 12px;
-      flex-wrap: wrap;
     }
 
     nav a {
@@ -74,7 +82,6 @@
       color: var(--accent);
     }
 
-    /* ===== HERO ===== */
     .hero {
       display: grid;
       grid-template-columns: 1fr 420px;
@@ -90,16 +97,9 @@
       box-shadow: var(--shadow);
     }
 
-    .hero-left h2 {
-      font-size: 28px;
-      margin: 12px 0;
-    }
+    .hero-left h2 { font-size: 28px; margin: 8px 0; }
 
-    .cta {
-      display: flex;
-      gap: 12px;
-      margin-top: 12px;
-    }
+    .cta { display: flex; gap: 12px; margin-top: 12px; }
 
     .btn {
       padding: 12px 18px;
@@ -120,6 +120,9 @@
       aspect-ratio: 4 / 5;
       border-radius: 12px;
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background: #eee;
     }
 
@@ -136,34 +139,68 @@
       margin-top: 18px;
     }
 
+    .gallery img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
     footer {
       margin-top: 28px;
       text-align: center;
+      color: var(--muted);
       font-size: 14px;
     }
 
     @media (max-width: 980px) {
       .hero { grid-template-columns: 1fr; }
+      .profile-photo { height: 300px; }
+      .grid-3 { grid-template-columns: repeat(2,1fr); }
     }
 
-    @media (max-width: 600px) {
-      .brand-banner img { max-height: 90px; }
-      header { justify-content: center; }
+    @media (max-width: 520px) {
+      .grid-3 { grid-template-columns: 1fr; }
     }
   </style>
 </head>
+  <div class="brand-banner">
+  <img src="banner-me.png" alt="Gestão na Prática">
+</div>
+
+/* Banner de identidade */
+.brand-banner {
+  max-width: 1200px;
+  margin: 16px auto 0;
+  padding: 0 20px;
+}
+
+.brand-banner img {
+  width: 100%;
+  height: auto;
+  max-height: 100px;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .brand-banner img {
+    max-height: 100px;
+  }
+}
 
 <body>
-
-  <!-- BANNER -->
-  <section class="brand-banner">
-    <img src="banner-me.png" alt="ME - Gestão na Prática">
-  </section>
-
   <div class="wrap">
 
-    <!-- MENU -->
     <header>
+      <div class="brand">
+      <div class="logo">ME</div>
+        <div>
+          <h1>- Gestão na Prática</h1>
+          <p class="lead">ADM em formação | Consultoria Simples</p>
+        </div>
+      </div>
+
       <nav>
         <a href="#sobre">Sobre mim</a>
         <a href="#servicos">Serviços</a>
@@ -172,36 +209,63 @@
         <a href="#contato" class="primary">Contato</a>
       </nav>
     </header>
+    
+<section class="brand-banner">
+  <img src="banner-me.png" alt="ME - Gestão na Prática">
+</section>
 
-    <!-- HERO -->
     <section class="hero">
       <div class="hero-left card">
-        <span>Organização • Clareza • Produtividade</span>
+        <span class="pill">Organização • Clareza • Produtividade</span>
+
         <h2>Passo a passo para organizar seu negócio na prática</h2>
+
         <p>Dicas de organização e produtividade, orientações práticas para MEIs e pequenos negócios, consultorias acessíveis e humanizadas.</p>
 
         <div class="cta">
           <a class="btn btn-primary" href="#contato">Agendar Consulta</a>
         </div>
+
+        <div class="grid-3">
+          <div class="card"><h3>Gestão Financeira</h3><p>Fluxo de caixa e planejamento.</p></div>
+          <div class="card"><h3>Processos</h3><p>Organização e rotina.</p></div>
+          <div class="card"><h3>Treinamento</h3><p>Capacitação prática.</p></div>
+        </div>
       </div>
 
       <aside class="profile-photo card">
-        <img src="logo-maria.jpg" alt="Maria Eduarda">
-      </aside>
-    </section>
+    <img src="logo-maria.jpg" alt="Logo ME - Gestão na Prática" />
+</aside>
 
-    <!-- SEÇÕES -->
+
     <section id="sobre" class="card" style="margin-top:18px">
       <h3>Sobre mim</h3>
-      <p>Olá! Eu sou Maria Eduarda...</p>
+      <p class="muted"> Olá! Eu sou Maria Eduarda, tenho 24 anos, sou teresinense e estudante do último período de Bacharelado em Administração pela Universidade Estadual do Piauí.
+Minha jornada na gestão começou muito antes da sala de aula. Sempre fui apaixonada por organização, rotina e pela forma como pequenos ajustes podem transformar completamente a vida das pessoas. Ao longo da graduação, essa paixão ganhou estrutura, método e propósito — e hoje se tornou o meu trabalho.
+Criei este espaço para ajudar pessoas que desejam mais clareza, praticidade e equilíbrio, mas não querem nada complicado, pesado ou distante da realidade. Acredito na gestão feita de forma leve, acessível e aplicada ao dia a dia: aquela que realmente funciona.
+Aqui você vai encontrar orientação prática, ferramentas simples, acompanhamento próximo e um olhar humano, porque cada pessoa tem sua própria história, ritmo e necessidades. Meu objetivo é caminhar com você para que sua rotina trabalhe a seu favor — não contra você.
+Seja para organizar sua vida, sua rotina, seus estudos ou suas finanças leves, você não precisa fazer isso sozinha. 
+        Estou aqui para te guiar nessa jornada de forma clara, gentil e eficiente.
+
+Vamos construir sua melhor versão na prática?...</p>
     </section>
 
     <section id="servicos" class="card" style="margin-top:18px">
       <h3>Serviços</h3>
+      <div class="gallery">
+        <img src="gallery1.jpg" />
+        <img src="gallery2.jpg" />
+        <img src="gallery3.jpg" />
+      </div>
     </section>
 
     <section id="blog" class="card" style="margin-top:18px">
       <h3>Blog</h3>
+      <div class="grid-3">
+        <div class="card">Post 1</div>
+        <div class="card">Post 2</div>
+        <div class="card">Post 3</div>
+      </div>
     </section>
 
     <section id="depoimentos" class="card" style="margin-top:18px">
@@ -210,7 +274,14 @@
 
     <section id="contato" class="card" style="margin-top:18px">
       <h3>Contato</h3>
-      <a href="mailto:me.gestaonapratica@gmail.com">✉️ me.gestaonapratica@gmail.com</a>
+      <a href="mailto:me.gestaonapratica@gmail.com">✉️ Email — me.gestaonapratica@gmail.com</a>
+
+      <form style="margin-top:12px;display:grid;gap:8px">
+        <input placeholder="Nome" />
+        <input placeholder="Telefone / WhatsApp" />
+        <textarea placeholder="Mensagem"></textarea>
+        <button class="btn btn-primary">Enviar</button>
+      </form>
     </section>
 
     <footer>
@@ -224,10 +295,4 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
+    
