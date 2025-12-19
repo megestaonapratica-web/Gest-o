@@ -155,6 +155,42 @@
       font-size: 14px;
     }
 
+    .blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.blog-card {
+  background: rgba(255,255,255,0.4);
+  padding: 18px;
+  border-radius: 12px;
+}
+
+.blog-card h4 {
+  margin: 8px 0;
+  color: var(--text-strong);
+}
+
+.blog-card p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.blog-tag {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.blog-em-breve {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
     /* RESPONSIVO */
     @media (max-width: 900px) {
       .grid-3 {
@@ -395,6 +431,7 @@ Seja para organizar sua vida, sua rotina, seus estudos ou suas finanças leves, 
 
 </body>
 </html>
+
 
 
 
