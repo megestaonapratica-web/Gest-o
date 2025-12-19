@@ -1,4 +1,4 @@
-    <!doctype html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
@@ -47,22 +47,19 @@
       gap: 12px;
     }
 
-   .logo {
-  width: 56px;
-  height: 56px;
-  border-radius: 12px;
-  background: transparent;
-  box-shadow: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-    
-    .logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
+    .logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 12px;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 20px;
+      box-shadow: var(--shadow);
+    }
 
     nav {
       display: flex;
@@ -116,8 +113,7 @@
 
     .profile-photo {
       width: 100%;
-      max-width: 420px;
-      aspect-ratio: 4 / 5;
+      height: 420px;
       border-radius: 12px;
       overflow: hidden;
       display: flex;
@@ -164,39 +160,15 @@
     }
   </style>
 </head>
-  <div class="brand-banner">
-  <img src="banner-me.png" alt="Gestão na Prática">
-</div>
-
-/* Banner de identidade */
-.brand-banner {
-  max-width: 1200px;
-  margin: 16px auto 0;
-  padding: 0 20px;
-}
-
-.brand-banner img {
-  width: 100%;
-  height: auto;
-  max-height: 100px;
-  object-fit: contain;
-  display: block;
-}
-
-@media (max-width: 600px) {
-  .brand-banner img {
-    max-height: 100px;
-  }
-}
 
 <body>
   <div class="wrap">
 
     <header>
       <div class="brand">
-      <div class="logo">ME</div>
+        <div class="logo">PR</div>
         <div>
-          <h1>- Gestão na Prática</h1>
+          <h1>ME - Gestão na Prática</h1>
           <p class="lead">ADM em formação | Consultoria Simples</p>
         </div>
       </div>
@@ -209,10 +181,6 @@
         <a href="#contato" class="primary">Contato</a>
       </nav>
     </header>
-    
-<section class="brand-banner">
-  <img src="banner-me.png" alt="ME - Gestão na Prática">
-</section>
 
     <section class="hero">
       <div class="hero-left card">
@@ -296,3 +264,4 @@ Vamos construir sua melhor versão na prática?...</p>
 </body>
 </html>
     
+
