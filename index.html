@@ -258,6 +258,78 @@
   }
 </script>
 
+  <script>
+const quiz = [
+  {
+    pergunta: "Como você tem se sentido na sua rotina ultimamente?",
+    opcoes: ["Sobrecarregada", "Confusa", "Sem tempo", "Um pouco perdida"],
+    tipo: "rotina"
+  },
+  {
+    pergunta: "O que mais te preocupa hoje?",
+    opcoes: ["Minha rotina", "Minhas finanças", "Meu negócio", "Tudo ao mesmo tempo"],
+    tipo: "geral"
+  },
+  {
+    pergunta: "Você costuma se organizar com frequência?",
+    opcoes: [
+      "Quase nunca",
+      "Às vezes, quando consigo",
+      "Tento, mas não mantenho",
+      "Sim, mas ainda sinto dificuldade"
+    ],
+    tipo: "rotina"
+  }
+];
+
+let indice = 0;
+let resultado = { rotina: 0, financas: 0, geral: 0 };
+
+function carregarQuiz() {
+  document.getElementById("pergunta-quiz").textContent = quiz[indice].pergunta;
+  const opcoesDiv = document.getElementById("opcoes-quiz");
+  opcoesDiv.innerHTML = "";
+
+  quiz[indice].opcoes.forEach(opcao => {
+    const btn = document.createElement("button");
+    btn.className = "btn";
+    btn.textContent = opcao;
+    btn.onclick = () => responderQuiz(quiz[indice].tipo);
+    opcoesDiv.appendChild(btn);
+  });
+}
+
+function responderQuiz(tipo) {
+  resultado[tipo]++;
+  indice++;
+
+  if (indice < quiz.length) {
+    carregarQuiz();
+  } else {
+    mostrarResultadoQuiz();
+  }
+}
+
+function mostrarResultadoQuiz() {
+  document.getElementById("pergunta-quiz").style.display = "none";
+  document.getElementById("opcoes-quiz").style.display = "none";
+
+  let mensagemFinal =
+    "Quando tudo parece confuso, começar pelo básico já é um grande passo. Organização também é cuidado.";
+
+  if (resultado.rotina >= 2) {
+    mensagemFinal =
+      "Sua rotina parece estar pedindo mais clareza e leveza. Começar organizando o dia a dia pode aliviar bastante a sobrecarga.";
+  }
+
+  document.getElementById("resultado-quiz").textContent = mensagemFinal;
+  document.getElementById("resultado-quiz").style.display = "block";
+  document.getElementById("cta-quiz").style.display = "inline-block";
+}
+
+carregarQuiz();
+</script>
+
 <body>
 
   <div class="wrap">
@@ -552,6 +624,7 @@ Seja para organizar sua vida, sua rotina, seus estudos ou suas finanças leves, 
 
 </body>
 </html>
+
 
 
 
