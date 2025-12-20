@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>ME - Gestão na Prática</title>
   <meta name="description" content="Serviços de consultoria administrativa simples e descomplicada." />
 
@@ -21,9 +19,7 @@
       --shadow: 0 6px 20px #D6C9B8;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -43,24 +39,34 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      flex-wrap: wrap;
     }
 
-    .brand h1 {
-      margin: 0;
-      font-size: 26px;
-      color: var(--text-strong);
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    .brand p {
-      margin: 4px 0 0;
-      font-size: 14px;
-    }
+   .logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+    
+    .logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
     nav {
       display: flex;
       gap: 12px;
-      flex-wrap: wrap;
     }
 
     nav a {
@@ -72,15 +78,16 @@
     }
 
     nav a.primary {
-      border: 1px solid rgba(0,0,0,0.15);
+      border: 1px solid rgba(0,0,0,0.1);
       color: var(--accent);
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 420px;
       gap: 24px;
-      margin-top: 32px;
+      margin-top: 24px;
+      align-items: center;
     }
 
     .card {
@@ -90,15 +97,9 @@
       box-shadow: var(--shadow);
     }
 
-    .hero-left h2 {
-      font-size: 28px;
-      margin: 10px 0;
-      color: var(--text-strong);
-    }
+    .hero-left h2 { font-size: 28px; margin: 8px 0; }
 
-    .cta {
-      margin-top: 16px;
-    }
+    .cta { display: flex; gap: 12px; margin-top: 12px; }
 
     .btn {
       padding: 12px 18px;
@@ -106,13 +107,29 @@
       border: none;
       cursor: pointer;
       font-weight: 700;
-      text-decoration: none;
-      display: inline-block;
     }
 
     .btn-primary {
       background: var(--accent);
       color: #fff;
+    }
+
+    .profile-photo {
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 4 / 5;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #eee;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .grid-3 {
@@ -129,677 +146,147 @@
       border-radius: 10px;
     }
 
-    /* SOBRE MIM */
-    .sobre-container {
-      display: flex;
-      gap: 24px;
-      align-items: flex-start;
-    }
-
-    .sobre-foto img {
-      width: 180px;
-      height: auto;
-      object-fit: contain;
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-    }
-
-    .sobre-texto p {
-      margin: 0;
-      line-height: 1.6;
-    }
-
     footer {
-      margin-top: 32px;
+      margin-top: 28px;
       text-align: center;
+      color: var(--muted);
       font-size: 14px;
     }
 
-    .blog-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 16px;
-}
-
-.blog-card {
-  background: rgba(255,255,255,0.4);
-  padding: 18px;
-  border-radius: 12px;
-}
-
-.blog-card h4 {
-  margin: 8px 0;
-  color: var(--text-strong);
-}
-
-.blog-card p {
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.blog-tag {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--accent);
-}
-
-    /* Animações suaves */
-.card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
-}
-
-.btn {
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-.blog-em-breve {
-  display: inline-block;
-  margin-top: 8px;
-  font-size: 12px;
-  color: var(--muted);
-}
-
-    /* RESPONSIVO */
-    @media (max-width: 900px) {
-      .grid-3 {
-        grid-template-columns: repeat(2,1fr);
-      }
-    }
-
-    @media (max-width: 720px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .sobre-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .sobre-foto img {
-        margin: 0 auto;
-      }
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; }
+      .profile-photo { height: 300px; }
+      .grid-3 { grid-template-columns: repeat(2,1fr); }
     }
 
     @media (max-width: 520px) {
-      .grid-3 {
-        grid-template-columns: 1fr;
-      }
+      .grid-3 { grid-template-columns: 1fr; }
     }
-
-    @media (max-width: 900px) {
-  .blog-grid {
-    grid-template-columns: repeat(2,1fr);
-  }
-}
-
-@media (max-width: 520px) {
-  .blog-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-    /* =====================
-   CHAT RUTE – ASSISTENTE
-===================== */
-
-#chat-botao {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--accent);
-  color: #fff;
-  padding: 14px 16px;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: var(--shadow);
-  font-size: 20px;
-  z-index: 9999;
-}
-
-#chat-box {
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  width: 320px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-  display: none;
-  flex-direction: column;
-  overflow: hidden;
-  z-index: 9999;
-}
-
-#chat-header {
-  background: var(--accent);
-  color: #fff;
-  padding: 14px;
-  font-weight: 700;
-  font-size: 15px;
-}
-
-#chat-mensagens {
-  padding: 14px;
-  font-size: 14px;
-  max-height: 260px;
-  overflow-y: auto;
-}
-
-.chat-msg {
-  margin-bottom: 10px;
-  line-height: 1.4;
-}
-
-.chat-rute {
-  color: var(--text-strong);
-}
-
-.chat-user {
-  text-align: right;
-  font-weight: 600;
-  color: var(--accent);
-}
-
-#chat-opcoes {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-#chat-opcoes button {
-  background: var(--secondary);
-  border: none;
-  border-radius: 10px;
-  padding: 10px;
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--text-strong);
-}
-
   </style>
 </head>
-
-  /* === PAUSA PRA VOCÊ === */
-  const botaoPausa = document.querySelector("#acolhimento .btn");
-
-  if (botaoPausa) {
-    botaoPausa.addEventListener("click", function () {
-      const mensagem = document.getElementById("mensagem-final");
-      if (mensagem) {
-        mensagem.style.display = "block";
-      }
-    });
-  }
-
-  /* === QUIZ === */
-  const quiz = [
-    {
-      pergunta: "Como você tem se sentido na sua rotina ultimamente?",
-      opcoes: ["Sobrecarregada", "Confusa", "Sem tempo", "Um pouco perdida"],
-      tipo: "rotina"
-    },
-    {
-      pergunta: "O que mais te preocupa hoje?",
-      opcoes: ["Minha rotina", "Minhas finanças", "Meu negócio", "Tudo ao mesmo tempo"],
-      tipo: "geral"
-    },
-    {
-      pergunta: "Você costuma se organizar com frequência?",
-      opcoes: [
-        "Quase nunca",
-        "Às vezes, quando consigo",
-        "Tento, mas não mantenho",
-        "Sim, mas ainda sinto dificuldade"
-      ],
-      tipo: "rotina"
-    }
-  ];
-
-  let indice = 0;
-  let resultado = { rotina: 0, geral: 0 };
-
-  const perguntaEl = document.getElementById("pergunta-quiz");
-  const opcoesEl = document.getElementById("opcoes-quiz");
-  const resultadoEl = document.getElementById("resultado-quiz");
-  const ctaEl = document.getElementById("cta-quiz");
-
-  function carregarQuiz() {
-    if (!perguntaEl || !opcoesEl) return;
-
-    perguntaEl.textContent = quiz[indice].pergunta;
-    opcoesEl.innerHTML = "";
-
-    quiz[indice].opcoes.forEach(opcao => {
-      const btn = document.createElement("button");
-      btn.className = "btn";
-      btn.textContent = opcao;
-      btn.addEventListener("click", () => responderQuiz(quiz[indice].tipo));
-      opcoesEl.appendChild(btn);
-    });
-  }
-
-  function responderQuiz(tipo) {
-    resultado[tipo]++;
-    indice++;
-
-    if (indice < quiz.length) {
-      carregarQuiz();
-    } else {
-      finalizarQuiz();
-    }
-  }
-
-  function finalizarQuiz() {
-    perguntaEl.style.display = "none";
-    opcoesEl.style.display = "none";
-
-    resultadoEl.textContent =
-      "Sua rotina parece estar pedindo mais clareza e leveza. Começar organizando o dia a dia pode aliviar bastante a sobrecarga.";
-
-    resultadoEl.style.display = "block";
-    ctaEl.style.display = "inline-block";
-  }
-
-  carregarQuiz();
-});
-</script>
-
-  <!-- BOTÃO CHAT RUTE -->
-<div id="chat-botao" aria-label="Abrir chat">💬</div>
-
-<!-- CHAT RUTE -->
-<div id="chat-box">
-  <div id="chat-header">Rute✨️</div>
-
-  <div id="chat-mensagens">
-    <div class="chat-msg chat-rute">
-      Oi! Eu sou a Rute 💛  
-      Estou aqui para te ouvir.  
-      Como posso te ajudar agora?
-    </div>
-  </div>
-
-  <div id="chat-opcoes">
-  <button onclick="ruteResponder('sobrecarga')">😮‍💨 Estou sobrecarregada</button>
-  <button onclick="ruteResponder('rotina')">🗂 Quero organizar minha rotina</button>
-  <button onclick="ruteResponder('financas')">💰 Organizar finanças</button>
-  <button onclick="ruteResponder('confusa')">🧠 Estou confusa</button>
-  <button onclick="ruteResponder('conversar')">💬 Só conversar</button>
-  <button onclick="ruteResponder('contato')">📩 Falar com a Maria Eduarda</button>
+  <div class="brand-banner">
+  <img src="banner-me.png" alt="Gestão na Prática">
 </div>
 
-  ...
-</section> <!-- última seção -->
+/* Banner de identidade */
+.brand-banner {
+  max-width: 1200px;
+  margin: 16px auto 0;
+  padding: 0 20px;
+}
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  ...
-});
-</script>
+.brand-banner img {
+  width: 100%;
+  height: auto;
+  max-height: 100px;
+  object-fit: contain;
+  display: block;
+}
 
-</html>
+@media (max-width: 600px) {
+  .brand-banner img {
+    max-height: 100px;
+  }
+}
 
 <body>
-
   <div class="wrap">
 
     <header>
       <div class="brand">
-        <h1>ME - Gestão na Prática</h1>
-        <p>ADM em formação | Consultoria Simples</p>
+      <div class="logo">ME</div>
+        <div>
+          <h1>- Gestão na Prática</h1>
+          <p class="lead">ADM em formação | Consultoria Simples</p>
+        </div>
       </div>
 
       <nav>
         <a href="#sobre">Sobre mim</a>
         <a href="#servicos">Serviços</a>
-        <a href="#como-funciona">Como funciona</a>
         <a href="#blog">Blog</a>
         <a href="#depoimentos">Depoimentos</a>
         <a href="#contato" class="primary">Contato</a>
       </nav>
     </header>
+    
+<section class="brand-banner">
+  <img src="banner-me.png" alt="ME - Gestão na Prática">
+</section>
 
     <section class="hero">
       <div class="hero-left card">
-        <span>Organização • Clareza • Produtividade</span>
+        <span class="pill">Organização • Clareza • Produtividade</span>
 
         <h2>Passo a passo para organizar seu negócio na prática</h2>
 
-        <p>
-          Dicas de organização e produtividade, orientações práticas para MEIs
-          e pequenos negócios, consultorias acessíveis e humanizadas.
-        </p>
+        <p>Dicas de organização e produtividade, orientações práticas para MEIs e pequenos negócios, consultorias acessíveis e humanizadas.</p>
 
         <div class="cta">
           <a class="btn btn-primary" href="#contato">Agendar Consulta</a>
         </div>
 
         <div class="grid-3">
-          <div class="card">
-            <h3>Gestão Financeira</h3>
-            <p>Fluxo de caixa e planejamento.</p>
-          </div>
-          <div class="card">
-            <h3>Processos</h3>
-            <p>Organização e rotina.</p>
-          </div>
-          <div class="card">
-            <h3>Treinamento</h3>
-            <p>Capacitação prática.</p>
-          </div>
+          <div class="card"><h3>Gestão Financeira</h3><p>Fluxo de caixa e planejamento.</p></div>
+          <div class="card"><h3>Processos</h3><p>Organização e rotina.</p></div>
+          <div class="card"><h3>Treinamento</h3><p>Capacitação prática.</p></div>
         </div>
       </div>
-    </section>
 
-    <section id="sobre" class="card" style="margin-top:24px">
+      <aside class="profile-photo card">
+    <img src="logo-maria.jpg" alt="Logo ME - Gestão na Prática" />
+</aside>
+
+
+    <section id="sobre" class="card" style="margin-top:18px">
       <h3>Sobre mim</h3>
-
-      <div class="sobre-container">
-        <div class="sobre-foto">
-          <img src="sobre.png" alt="Maria Eduarda - ME Gestão na Prática">
-        </div>
-
-        <div class="sobre-texto">
-          <p>
-            Olá! Eu sou Maria Eduarda, tenho 24 anos, sou teresinense e estudante
-            do último período de Bacharelado em Administração pela Universidade
-            Estadual do Piauí.
-            <br><br>
-            Minha jornada na gestão começou muito antes da sala de aula. Sempre fui apaixonada por organização, rotina e pela forma como pequenos ajustes podem transformar completamente a vida das pessoas. Ao longo da graduação, essa paixão ganhou estrutura, método e propósito — e hoje se tornou o meu trabalho.
-
+      <p class="muted"> Olá! Eu sou Maria Eduarda, tenho 24 anos, sou teresinense e estudante do último período de Bacharelado em Administração pela Universidade Estadual do Piauí.
+Minha jornada na gestão começou muito antes da sala de aula. Sempre fui apaixonada por organização, rotina e pela forma como pequenos ajustes podem transformar completamente a vida das pessoas. Ao longo da graduação, essa paixão ganhou estrutura, método e propósito — e hoje se tornou o meu trabalho.
 Criei este espaço para ajudar pessoas que desejam mais clareza, praticidade e equilíbrio, mas não querem nada complicado, pesado ou distante da realidade. Acredito na gestão feita de forma leve, acessível e aplicada ao dia a dia: aquela que realmente funciona.
-
 Aqui você vai encontrar orientação prática, ferramentas simples, acompanhamento próximo e um olhar humano, porque cada pessoa tem sua própria história, ritmo e necessidades. Meu objetivo é caminhar com você para que sua rotina trabalhe a seu favor — não contra você.
+Seja para organizar sua vida, sua rotina, seus estudos ou suas finanças leves, você não precisa fazer isso sozinha. 
+        Estou aqui para te guiar nessa jornada de forma clara, gentil e eficiente.
 
-Seja para organizar sua vida, sua rotina, seus estudos ou suas finanças leves, você não precisa fazer isso sozinha. Estou aqui para te guiar nessa jornada de forma clara, gentil e eficiente.
-            <br><br>
-            <strong>Vamos construir sua melhor versão na prática?</strong>
-          </p>
-        </div>
+Vamos construir sua melhor versão na prática?...</p>
+    </section>
+
+    <section id="servicos" class="card" style="margin-top:18px">
+      <h3>Serviços</h3>
+      <div class="gallery">
+        <img src="gallery1.jpg" />
+        <img src="gallery2.jpg" />
+        <img src="gallery3.jpg" />
       </div>
     </section>
 
-    <section id="servicos" class="card" style="margin-top:24px">
-  <h3>Serviços</h3>
-
-  <div class="grid-3">
-
-    <div class="card">
-      <h4>🗂 Organização da Rotina e Processos</h4>
-      <p>
-        Apoio na organização da rotina, priorização de tarefas e criação
-        de processos simples para o dia a dia.
-        <br><br>
-        <strong>Resultado:</strong> mais clareza, menos sobrecarga e mais produtividade.
-      </p>
-    </div>
-
-    <div class="card">
-      <h4>💰 Organização Financeira Básica</h4>
-      <p>
-        Orientação prática para organizar entradas e saídas, controlar gastos
-        e entender melhor sua realidade financeira.
-        <br><br>
-        <strong>Resultado:</strong> mais controle, segurança e decisões conscientes.
-      </p>
-    </div>
-
-    <div class="card">
-      <h4>🎯 Consultoria Administrativa Simples</h4>
-      <p>
-        Consultoria personalizada para quem quer organizar a rotina ou o negócio
-        sem complicação e com foco no que realmente funciona.
-        <br><br>
-        <strong>Resultado:</strong> organização prática e adaptada à sua realidade.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-    <section id="como-funciona" class="card" style="margin-top:24px">
-  <h3>Como funciona</h3>
-
-  <p style="max-width:720px; line-height:1.6">
-    Meu acompanhamento é simples, humano e adaptado à sua realidade.
-    Nada de fórmulas prontas ou processos complicados — caminhamos juntas,
-    passo a passo.
-  </p>
-
-  <div class="grid-3" style="margin-top:18px">
-    <div class="card">
-      <h4>1️⃣ Primeiro contato</h4>
-      <p>
-        Você entra em contato por e-mail contando, de forma breve,
-        o que deseja organizar: rotina, finanças ou processos.
-      </p>
-    </div>
-
-    <div class="card">
-      <h4>2️⃣ Entendimento da sua realidade</h4>
-      <p>
-        Analiso seu momento, suas dificuldades e objetivos.
-        Cada orientação é pensada de acordo com sua rotina,
-        ritmo e necessidades reais.
-      </p>
-    </div>
-
-    <div class="card">
-      <h4>3️⃣ Orientação prática</h4>
-      <p>
-        Recebe direcionamentos claros, ferramentas simples
-        e sugestões aplicáveis ao seu dia a dia,
-        sem complicação.
-      </p>
-    </div>
-  </div>
-
-  <div class="cta" style="margin-top:20px">
-    <a href="#contato" class="btn btn-primary">
-      Quero organizar minha rotina
-    </a>
-  </div>
-</section>
-
-    <section id="blog" class="card" style="margin-top:24px">
-  <h3>Blog</h3>
-
-  <p style="max-width:720px;line-height:1.6">
-    Este é um espaço para compartilhar reflexões, dicas práticas e conteúdos
-    sobre organização, produtividade e gestão aplicada ao dia a dia.
-  </p>
-
-  <div class="blog-grid">
-
-    <div class="blog-card">
-      <span class="blog-tag">Organização</span>
-      <h4>Como organizar sua rotina sem se sentir sobrecarregada</h4>
-      <p>
-        Pequenos ajustes na rotina podem gerar grandes resultados quando feitos
-        de forma consciente e possível.
-      </p>
-      <span class="blog-em-breve">Em breve</span>
-    </div>
-
-    <div class="blog-card">
-      <span class="blog-tag">Produtividade</span>
-      <h4>Produtividade real: fazer o que importa</h4>
-      <p>
-        Ser produtiva não é fazer mais, é fazer melhor — respeitando seu ritmo
-        e sua realidade.
-      </p>
-      <span class="blog-em-breve">Em breve</span>
-    </div>
-
-    <div class="blog-card">
-      <span class="blog-tag">Gestão simples</span>
-      <h4>Gestão não precisa ser complicada</h4>
-      <p>
-        A gestão que funciona é aquela que cabe na sua vida e te ajuda,
-        não a que te paralisa.
-      </p>
-      <span class="blog-em-breve">Em breve</span>
-    </div>
-
-  </div>
-</section>
-    <section class="card" style="margin-top:24px;text-align:center" id="acolhimento">
-  <h3>Uma pausa pra você</h3>
-
-  <p id="frase-inicial" style="max-width:640px;margin:12px auto;line-height:1.6">
-    “Sentir-se sobrecarregada não significa falta de capacidade —
-    significa que você está tentando dar conta de muita coisa sozinha.”
-  </p>
-
-  <button class="btn btn-primary" onclick="mostrarMensagem()">
-    Eu precisava ler isso hoje
-  </button>
-
-  <p id="mensagem-final"
-     style="display:none;max-width:640px;margin:16px auto;font-weight:600;color:var(--text-strong)">
-    💛 Respira. Um passo de cada vez já é progresso.
-    Você não precisa fazer tudo hoje.
-  </p>
-</section>
-
-   <section id="depoimentos" class="card" style="margin-top:24px">
-  <h3>Depoimentos</h3>
-
-  <div class="depoimento-card">
-    <p class="depoimento-texto">
-      “Cada pessoa tem uma realidade, um ritmo e uma história diferente.
-      <br><br>
-      Por isso, meu trabalho é construído junto com você, com escuta, clareza
-      e respeito ao seu momento.”
-    </p>
-
-    <p class="depoimento-em-breve">
-      ✨ Em breve, este espaço será preenchido com histórias reais de transformação.
-    </p>
-  </div>
-</section>
-
-<section id="quiz" class="card" style="margin-top:24px;text-align:center">
-  <h3>Por onde você deveria começar a se organizar hoje?</h3>
-
-  <p style="max-width:600px;margin:8px auto;line-height:1.6">
-    Responda com sinceridade. Não existem respostas certas ou erradas.
-  </p>
-
-  <p id="pergunta-quiz" style="font-weight:600;margin-top:16px"></p>
-
-  <div id="opcoes-quiz"
-       style="margin-top:16px;display:flex;flex-direction:column;gap:10px;max-width:420px;margin-left:auto;margin-right:auto">
-  </div>
-
-  <p id="resultado-quiz"
-     style="margin-top:20px;font-weight:600;color:var(--text-strong);display:none">
-  </p>
-
-  <a href="#contato" id="cta-quiz" class="btn btn-primary"
-     style="display:none;margin-top:14px">
-    Quero ajuda para começar com calma
-  </a>
-</section>
-
-    <section id="contato" class="card" style="margin-top:24px">
-  <h3>Contato</h3>
-
-  <p>
-    Se você deseja conversar comigo, tirar dúvidas ou saber mais sobre
-    consultorias e orientações práticas, entre em contato pelo e-mail abaixo.
-  </p>
-
-  <p style="margin-top:12px">
-    ✉️ <a href="mailto:me.gestaonapratica@gmail.com">
-      me.gestaonapratica@gmail.com
-    </a>
-  </p>
-
-  <p style="margin-top:8px;font-size:14px;color:var(--muted)">
-    Retorno em até 24 horas úteis.
-  </p>
-</section>
-
-<script>
-  document.getElementById("ano").textContent = new Date().getFullYear();
-
-  function ruteResponder(caminho) {
-    const chat = document.getElementById("chat-mensagens");
-
-    const respostas = {
-      sobrecarga: `
-        Obrigada por confiar em mim 💛<br><br>
-        Quando tudo parece pesado, geralmente não é falta de capacidade —
-        é excesso.<br><br>
-        Quer começar organizando <strong>seu dia</strong>
-        ou só <strong>respirar um pouco</strong> comigo?
-      `,
-      rotina: `
-        Organizar a rotina não é fazer mais,
-        é criar espaço para o que importa 🌿<br><br>
-        Sua maior dificuldade hoje é
-        <strong>falta de tempo</strong> ou
-        <strong>excesso de tarefas</strong>?
-      `,
-      financas: `
-        Falar de dinheiro pode gerar ansiedade,
-        e está tudo bem sentir isso 💛<br><br>
-        Podemos começar bem simples:
-        você quer entender para onde seu dinheiro vai
-        ou organizar seus gastos fixos?
-      `,
-      confusa: `
-        Quando a mente está confusa,
-        o primeiro passo é clareza — não decisão 🌱<br><br>
-        Essa confusão está mais ligada à
-        <strong>vida pessoal</strong> ou ao
-        <strong>trabalho/rotina</strong>?
-      `,
-      conversar: `
-        Às vezes, tudo o que a gente precisa
-        é ser ouvida 💛<br><br>
-        Estou aqui com você. Sem pressa.
-      `,
-      contato: `
-        Se sentir que precisa de um acompanhamento humano,
-        próximo e respeitando seu ritmo 🌿<br><br>
-        A Maria Eduarda pode te ajudar.
-        Posso te levar até o contato quando quiser.
-      `
-    };
-
-    chat.innerHTML += `
-      <div class="chat-msg chat-rute">
-        ${respostas[caminho]}
+    <section id="blog" class="card" style="margin-top:18px">
+      <h3>Blog</h3>
+      <div class="grid-3">
+        <div class="card">Post 1</div>
+        <div class="card">Post 2</div>
+        <div class="card">Post 3</div>
       </div>
-    `;
+    </section>
 
-    chat.scrollTop = chat.scrollHeight;
-  }
-</script>
+    <section id="depoimentos" class="card" style="margin-top:18px">
+      <h3>Depoimentos</h3>
+    </section>
 
-</body>
-</html>
+    <section id="contato" class="card" style="margin-top:18px">
+      <h3>Contato</h3>
+      <a href="mailto:me.gestaonapratica@gmail.com">✉️ Email — me.gestaonapratica@gmail.com</a>
 
+      <form style="margin-top:12px;display:grid;gap:8px">
+        <input placeholder="Nome" />
+        <input placeholder="Telefone / WhatsApp" />
+        <textarea placeholder="Mensagem"></textarea>
+        <button class="btn btn-primary">Enviar</button>
+      </form>
+    </section>
 
     <footer>
       © <span id="ano"></span> — ME - Gestão na Prática
     </footer>
-
   </div>
 
   <script>
@@ -807,7 +294,8 @@ Seja para organizar sua vida, sua rotina, seus estudos ou suas finanças leves, 
   </script>
 
 </body>
-</html>
+  </html>
+
 
 
 
