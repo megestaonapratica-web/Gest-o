@@ -726,37 +726,67 @@ Seja para organizar sua vida, sua rotina, seus estudos ou suas finanças leves, 
   </p>
 </section>
 
-    <script>
-/* =====================
-   CHAT RUTE – JS
-===================== */
+<script>
+  document.getElementById("ano").textContent = new Date().getFullYear();
 
-const chatBotao = document.getElementById("chat-botao");
-const chatBox = document.getElementById("chat-box");
-const chatMensagens = document.getElementById("chat-mensagens");
+  function ruteResponder(caminho) {
+    const chat = document.getElementById("chat-mensagens");
 
-chatBotao.addEventListener("click", () => {
-  chatBox.style.display =
-    chatBox.style.display === "flex" ? "none" : "flex";
-});
+    const respostas = {
+      sobrecarga: `
+        Obrigada por confiar em mim 💛<br><br>
+        Quando tudo parece pesado, geralmente não é falta de capacidade —
+        é excesso.<br><br>
+        Quer começar organizando <strong>seu dia</strong>
+        ou só <strong>respirar um pouco</strong> comigo?
+      `,
+      rotina: `
+        Organizar a rotina não é fazer mais,
+        é criar espaço para o que importa 🌿<br><br>
+        Sua maior dificuldade hoje é
+        <strong>falta de tempo</strong> ou
+        <strong>excesso de tarefas</strong>?
+      `,
+      financas: `
+        Falar de dinheiro pode gerar ansiedade,
+        e está tudo bem sentir isso 💛<br><br>
+        Podemos começar bem simples:
+        você quer entender para onde seu dinheiro vai
+        ou organizar seus gastos fixos?
+      `,
+      confusa: `
+        Quando a mente está confusa,
+        o primeiro passo é clareza — não decisão 🌱<br><br>
+        Essa confusão está mais ligada à
+        <strong>vida pessoal</strong> ou ao
+        <strong>trabalho/rotina</strong>?
+      `,
+      conversar: `
+        Às vezes, tudo o que a gente precisa
+        é ser ouvida 💛<br><br>
+        Estou aqui com você. Sem pressa.
+      `,
+      contato: `
+        Se sentir que precisa de um acompanhamento humano,
+        próximo e respeitando seu ritmo 🌿<br><br>
+        A Maria Eduarda pode te ajudar.
+        Posso te levar até o contato quando quiser.
+      `
+    };
 
-function ruteResponder(texto) {
-  chatMensagens.innerHTML += `
-    <div class="chat-msg chat-user">${texto}</div>
-  `;
-
-  setTimeout(() => {
-    chatMensagens.innerHTML += `
+    chat.innerHTML += `
       <div class="chat-msg chat-rute">
-        Obrigada por compartilhar 💛  
-        Um passo de cada vez já é suficiente.
-        Estou aqui com você.
+        ${respostas[caminho]}
       </div>
     `;
-    chatMensagens.scrollTop = chatMensagens.scrollHeight;
-  }, 600);
-}
+
+    chat.scrollTop = chat.scrollHeight;
+  }
 </script>
+
+</body>
+</html>
+
 
     <footer>
       © <span id="ano"></span> — ME - Gestão na Prática
@@ -770,6 +800,7 @@ function ruteResponder(texto) {
 
 </body>
 </html>
+
 
 
 
