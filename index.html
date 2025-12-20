@@ -732,6 +732,38 @@ Seja para organizar sua vida, sua rotina, seus estudos ou suas finanças leves, 
   </p>
 </section>
 
+    <script>
+/* =====================
+   CHAT RUTE – JS
+===================== */
+
+const chatBotao = document.getElementById("chat-botao");
+const chatBox = document.getElementById("chat-box");
+const chatMensagens = document.getElementById("chat-mensagens");
+
+chatBotao.addEventListener("click", () => {
+  chatBox.style.display =
+    chatBox.style.display === "flex" ? "none" : "flex";
+});
+
+function ruteResponder(texto) {
+  chatMensagens.innerHTML += `
+    <div class="chat-msg chat-user">${texto}</div>
+  `;
+
+  setTimeout(() => {
+    chatMensagens.innerHTML += `
+      <div class="chat-msg chat-rute">
+        Obrigada por compartilhar 💛  
+        Um passo de cada vez já é suficiente.
+        Estou aqui com você.
+      </div>
+    `;
+    chatMensagens.scrollTop = chatMensagens.scrollHeight;
+  }, 600);
+}
+</script>
+
     <footer>
       © <span id="ano"></span> — ME - Gestão na Prática
     </footer>
@@ -744,6 +776,7 @@ Seja para organizar sua vida, sua rotina, seus estudos ou suas finanças leves, 
 
 </body>
 </html>
+
 
 
 
