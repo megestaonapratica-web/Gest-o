@@ -253,9 +253,22 @@
   </style>
 </head>
   
- <script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
 
+  /* === PAUSA PRA VOCÊ === */
+  const botaoPausa = document.querySelector("#acolhimento .btn");
+
+  if (botaoPausa) {
+    botaoPausa.addEventListener("click", function () {
+      const mensagem = document.getElementById("mensagem-final");
+      if (mensagem) {
+        mensagem.style.display = "block";
+      }
+    });
+  }
+
+  /* === QUIZ === */
   const quiz = [
     {
       pergunta: "Como você tem se sentido na sua rotina ultimamente?",
@@ -280,20 +293,25 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   let indice = 0;
-  let resultado = { rotina: 0, financas: 0, geral: 0 };
+  let resultado = { rotina: 0, geral: 0 };
+
+  const perguntaEl = document.getElementById("pergunta-quiz");
+  const opcoesEl = document.getElementById("opcoes-quiz");
+  const resultadoEl = document.getElementById("resultado-quiz");
+  const ctaEl = document.getElementById("cta-quiz");
 
   function carregarQuiz() {
-    document.getElementById("pergunta-quiz").textContent = quiz[indice].pergunta;
+    if (!perguntaEl || !opcoesEl) return;
 
-    const opcoesDiv = document.getElementById("opcoes-quiz");
-    opcoesDiv.innerHTML = "";
+    perguntaEl.textContent = quiz[indice].pergunta;
+    opcoesEl.innerHTML = "";
 
     quiz[indice].opcoes.forEach(opcao => {
       const btn = document.createElement("button");
       btn.className = "btn";
       btn.textContent = opcao;
-      btn.onclick = () => responderQuiz(quiz[indice].tipo);
-      opcoesDiv.appendChild(btn);
+      btn.addEventListener("click", () => responderQuiz(quiz[indice].tipo));
+      opcoesEl.appendChild(btn);
     });
   }
 
@@ -304,25 +322,19 @@ document.addEventListener("DOMContentLoaded", function () {
     if (indice < quiz.length) {
       carregarQuiz();
     } else {
-      mostrarResultadoQuiz();
+      finalizarQuiz();
     }
   }
 
-  function mostrarResultadoQuiz() {
-    document.getElementById("pergunta-quiz").style.display = "none";
-    document.getElementById("opcoes-quiz").style.display = "none";
+  function finalizarQuiz() {
+    perguntaEl.style.display = "none";
+    opcoesEl.style.display = "none";
 
-    let mensagemFinal =
-      "Quando tudo parece confuso, começar pelo básico já é um grande passo. Organização também é cuidado.";
+    resultadoEl.textContent =
+      "Sua rotina parece estar pedindo mais clareza e leveza. Começar organizando o dia a dia pode aliviar bastante a sobrecarga.";
 
-    if (resultado.rotina >= 2) {
-      mensagemFinal =
-        "Sua rotina parece estar pedindo mais clareza e leveza. Começar organizando o dia a dia pode aliviar bastante a sobrecarga.";
-    }
-
-    document.getElementById("resultado-quiz").textContent = mensagemFinal;
-    document.getElementById("resultado-quiz").style.display = "block";
-    document.getElementById("cta-quiz").style.display = "inline-block";
+    resultadoEl.style.display = "block";
+    ctaEl.style.display = "inline-block";
   }
 
   carregarQuiz();
@@ -623,6 +635,7 @@ Seja para organizar sua vida, sua rotina, seus estudos ou suas finanças leves, 
 
 </body>
 </html>
+
 
 
 
