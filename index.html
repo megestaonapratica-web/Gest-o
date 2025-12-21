@@ -341,6 +341,32 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+  <!-- Assistente Virtual Rute -->
+<div id="rute-button" onclick="toggleChat()">
+  <img src="img/rute.png" alt="Rute Assistente Virtual">
+</div>
+
+<div id="rute-chat">
+  <div class="chat-header">
+    <span>Rute ✨️</span>
+    <button onclick="toggleChat()">×</button>
+  </div>
+
+  <div class="chat-body" id="chatBody">
+    <div class="bot-message">
+      Oi! Eu sou a Rute ✨️  
+      Como posso te ajudar hoje?
+    </div>
+
+    <div class="options">
+      <button onclick="sendOption('organizacao')">📋 Organização</button>
+      <button onclick="sendOption('rotina')">⏰ Rotina</button>
+      <button onclick="sendOption('tempo')">🧠 Gestão do tempo</button>
+      <button onclick="sendOption('contato')">💬 Falar com você</button>
+    </div>
+  </div>
+</div>
+
 <body>
 
   <div class="wrap">
@@ -635,3 +661,4 @@ Seja para organizar sua vida, sua rotina, seus estudos ou suas finanças leves, 
 
 </body>
 </html>
+
