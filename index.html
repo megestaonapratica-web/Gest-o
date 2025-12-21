@@ -341,94 +341,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-  <!-- Assistente Virtual Rute -->
-<div id="rute-button" onclick="toggleChat()">
-  Rute ✨
-</div>
-
-<div id="rute-chat">
-  <div class="chat-header">
-  <div id="rute-button" onclick="toggleChat()" aria-label="Abrir chat da Rute">
-  💬
-</div>
-
-  </div>
-
-  <div class="chat-body" id="chatBody">
-    <div class="bot-message">
-      Oi! Eu sou a Rute ✨️  
-      Como posso te ajudar hoje?
-    </div>
-
-    <div class="options">
-      <button onclick="sendOption('organizacao')">📋 Organização</button>
-      <button onclick="sendOption('rotina')">⏰ Rotina</button>
-      <button onclick="sendOption('tempo')">🧠 Gestão do tempo</button>
-      <button onclick="sendOption('contato')">💬 Falar com você</button>
-    </div>
-  </div>
-</div>
-
-  <script>
-function toggleChat() {
-  const chat = document.getElementById('rute-chat');
-  chat.style.display = chat.style.display === 'flex' ? 'none' : 'flex';
-}
-
-function sendOption(type) {
-  const chatBody = document.getElementById('chatBody');
-
-  let response = '';
-
-  if (type === 'organizacao') {
-    response = `
-      Organização é sobre clareza ✨️<br><br>
-      Posso te ajudar com:
-      <div class="options">
-        <button onclick="sendOption('metodos')">📌 Métodos</button>
-        <button onclick="sendOption('planejamento')">🗂 Planejamento</button>
-      </div>
-    `;
-  }
-
-  if (type === 'rotina') {
-    response = `
-      Rotina não precisa ser rígida 😉<br><br>
-      Você quer:
-      <div class="options">
-        <button onclick="sendOption('manha')">🌤 Rotina da manhã</button>
-        <button onclick="sendOption('noite')">🌙 Rotina da noite</button>
-      </div>
-    `;
-  }
-
-  if (type === 'tempo') {
-    response = `
-      Gestão do tempo é gestão de energia 🧠<br><br>
-      Posso te mostrar:
-      <div class="options">
-        <button onclick="sendOption('prioridades')">🎯 Prioridades</button>
-        <button onclick="sendOption('procrastinacao')">⏳ Procrastinação</button>
-      </div>
-    `;
-  }
-
-  if (type === 'contato') {
-    response = `
-      Que bom falar com você 💛<br><br>
-      Clique abaixo para entrar em contato:
-      <div class="options">
-        <a href="https://wa.me/5500000000000" target="_blank">
-          <button>📲 WhatsApp</button>
-        </a>
-      </div>
-    `;
-  }
-
-  if (type === 'metodos') {
-}
-</script>
-
 <body>
 
   <div class="wrap">
@@ -723,6 +635,7 @@ Seja para organizar sua vida, sua rotina, seus estudos ou suas finanças leves, 
 
 </body>
 </html>
+
 
 
 
