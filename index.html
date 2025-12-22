@@ -281,94 +281,6 @@
   </style>
 </head>
   
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  /* === PAUSA PRA VOCÊ === */
-  const botaoPausa = document.querySelector("#acolhimento .btn");
-
-  if (botaoPausa) {
-    botaoPausa.addEventListener("click", function () {
-      const mensagem = document.getElementById("mensagem-final");
-      if (mensagem) {
-        mensagem.style.display = "block";
-      }
-    });
-  }
-
-  /* === QUIZ === */
-  const quiz = [
-    {
-      pergunta: "Como você tem se sentido na sua rotina ultimamente?",
-      opcoes: ["Sobrecarregada", "Confusa", "Sem tempo", "Um pouco perdida"],
-      tipo: "rotina"
-    },
-    {
-      pergunta: "O que mais te preocupa hoje?",
-      opcoes: ["Minha rotina", "Minhas finanças", "Meu negócio", "Tudo ao mesmo tempo"],
-      tipo: "geral"
-    },
-    {
-      pergunta: "Você costuma se organizar com frequência?",
-      opcoes: [
-        "Quase nunca",
-        "Às vezes, quando consigo",
-        "Tento, mas não mantenho",
-        "Sim, mas ainda sinto dificuldade"
-      ],
-      tipo: "rotina"
-    }
-  ];
-
-  let indice = 0;
-  let resultado = { rotina: 0, geral: 0 };
-
-  const perguntaEl = document.getElementById("pergunta-quiz");
-  const opcoesEl = document.getElementById("opcoes-quiz");
-  const resultadoEl = document.getElementById("resultado-quiz");
-  const ctaEl = document.getElementById("cta-quiz");
-
-  function carregarQuiz() {
-    if (!perguntaEl || !opcoesEl) return;
-
-    perguntaEl.textContent = quiz[indice].pergunta;
-    opcoesEl.innerHTML = "";
-
-    quiz[indice].opcoes.forEach(opcao => {
-      const btn = document.createElement("button");
-      btn.className = "btn";
-      btn.textContent = opcao;
-      btn.addEventListener("click", () => responderQuiz(quiz[indice].tipo));
-      opcoesEl.appendChild(btn);
-    });
-  }
-
-  function responderQuiz(tipo) {
-    resultado[tipo]++;
-    indice++;
-
-    if (indice < quiz.length) {
-      carregarQuiz();
-    } else {
-      finalizarQuiz();
-    }
-  }
-
-  function finalizarQuiz() {
-    perguntaEl.style.display = "none";
-    opcoesEl.style.display = "none";
-
-    resultadoEl.textContent =
-      "Sua rotina parece estar pedindo mais clareza e leveza. Começar organizando o dia a dia pode aliviar bastante a sobrecarga.";
-
-    resultadoEl.style.display = "block";
-    ctaEl.style.display = "inline-block";
-  }
-
-  carregarQuiz();
-});
-</script>
-
 <body>
 
   <div class="wrap">
@@ -667,8 +579,97 @@ Seja para organizar sua vida, sua rotina, seus estudos ou suas finanças leves, 
     document.getElementById("ano").textContent = new Date().getFullYear();
   </script>
 
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* === PAUSA PRA VOCÊ === */
+  const botaoPausa = document.querySelector("#acolhimento .btn");
+
+  if (botaoPausa) {
+    botaoPausa.addEventListener("click", function () {
+      const mensagem = document.getElementById("mensagem-final");
+      if (mensagem) {
+        mensagem.style.display = "block";
+      }
+    });
+  }
+
+  /* === QUIZ === */
+  const quiz = [
+    {
+      pergunta: "Como você tem se sentido na sua rotina ultimamente?",
+      opcoes: ["Sobrecarregada", "Confusa", "Sem tempo", "Um pouco perdida"],
+      tipo: "rotina"
+    },
+    {
+      pergunta: "O que mais te preocupa hoje?",
+      opcoes: ["Minha rotina", "Minhas finanças", "Meu negócio", "Tudo ao mesmo tempo"],
+      tipo: "geral"
+    },
+    {
+      pergunta: "Você costuma se organizar com frequência?",
+      opcoes: [
+        "Quase nunca",
+        "Às vezes, quando consigo",
+        "Tento, mas não mantenho",
+        "Sim, mas ainda sinto dificuldade"
+      ],
+      tipo: "rotina"
+    }
+  ];
+
+  let indice = 0;
+  let resultado = { rotina: 0, geral: 0 };
+
+  const perguntaEl = document.getElementById("pergunta-quiz");
+  const opcoesEl = document.getElementById("opcoes-quiz");
+  const resultadoEl = document.getElementById("resultado-quiz");
+  const ctaEl = document.getElementById("cta-quiz");
+
+  function carregarQuiz() {
+    if (!perguntaEl || !opcoesEl) return;
+
+    perguntaEl.textContent = quiz[indice].pergunta;
+    opcoesEl.innerHTML = "";
+
+    quiz[indice].opcoes.forEach(opcao => {
+      const btn = document.createElement("button");
+      btn.className = "btn";
+      btn.textContent = opcao;
+      btn.addEventListener("click", () => responderQuiz(quiz[indice].tipo));
+      opcoesEl.appendChild(btn);
+    });
+  }
+
+  function responderQuiz(tipo) {
+    resultado[tipo]++;
+    indice++;
+
+    if (indice < quiz.length) {
+      carregarQuiz();
+    } else {
+      finalizarQuiz();
+    }
+  }
+
+  function finalizarQuiz() {
+    perguntaEl.style.display = "none";
+    opcoesEl.style.display = "none";
+
+    resultadoEl.textContent =
+      "Sua rotina parece estar pedindo mais clareza e leveza. Começar organizando o dia a dia pode aliviar bastante a sobrecarga.";
+
+    resultadoEl.style.display = "block";
+    ctaEl.style.display = "inline-block";
+  }
+
+  carregarQuiz();
+});
+</script>
+
 </body>
 </html>
+
 
 
 
