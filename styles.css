@@ -70,39 +70,68 @@ footer{margin-top:28px;padding:18px 0;text-align:center;color:var(--muted);font-
 
 }
 
-/* ===== ESTILO DOS POSTS DO BLOG ===== */
-
-.post-container {
+.post-article {
   max-width: 720px;
-  margin: 60px auto;
-  padding: 0 16px;
-  font-family: Inter, system-ui, Arial;
-  color: var(--muted);
-}
-
-.post-container h1 {
-  font-size: 28px;
-  margin-bottom: 16px;
-  color: #111827;
-}
-
-.post-container h2 {
-  margin-top: 36px;
-  margin-bottom: 12px;
-  font-size: 22px;
-  color: #111827;
-}
-
-.post-container p {
-  font-size: 16px;
+  margin: auto;
+  padding: 40px 24px;
+  font-family: 'Inter', sans-serif;
   line-height: 1.8;
-  margin-bottom: 20px;
+  color: #3f3a34;
+}
+
+.post-article h1 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: #4f6b55;
+}
+
+.post-article h2 {
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-size: 1.4rem;
+  color: #5a6f5a;
+}
+
+.post-article p {
+  margin-bottom: 16px;
+}
+
+.post-article ul {
+  margin: 16px 0 24px 20px;
+}
+
+.post-article li {
+  margin-bottom: 10px;
 }
 
 .post-image {
   width: 100%;
-  max-height: 320px;
-  object-fit: cover;
   border-radius: 14px;
-  margin: 18px 0 24px;
+  margin: 24px 0 40px;
 }
+
+/* caixas suaves */
+.soft-box {
+  background: #f4f1ec;
+  padding: 24px;
+  border-radius: 16px;
+  margin-top: 16px;
+  border-left: 4px solid #8fa893;
+}
+
+/* caixa final */
+.final-box {
+  background: #eef3ee;
+  padding: 32px;
+  border-radius: 20px;
+  margin-top: 48px;
+}
+
+.highlight-end {
+  margin-top: 24px;
+  text-align: center;
+  color: #4f6b55;
+  font-size: 1.1rem;
+}
+
+
