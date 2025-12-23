@@ -134,4 +134,38 @@ footer{margin-top:28px;padding:18px 0;text-align:center;color:var(--muted);font-
   font-size: 1.1rem;
 }
 
+.post-container.post-article {
+  max-width: 720px;
+  margin: 60px auto !important;
+  padding: 40px 24px !important;
+  line-height: 1.8;
+  color: #3f3a34;
+}
+
+.post-container.post-article h1 {
+  font-size: 32px !important;
+  margin-bottom: 28px;
+  color: #4f6b55;
+}
+
+.post-container.post-article h2 {
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-size: 22px;
+  color: #5a6f5a;
+}
+
+.post-container.post-article p {
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+.post-container.post-article ul {
+  margin: 16px 0 24px 24px;
+}
+
+.post-container.post-article li {
+  margin-bottom: 10px;
+}
+
 
