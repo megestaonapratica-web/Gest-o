@@ -174,5 +174,83 @@ footer{margin-top:28px;padding:18px 0;text-align:center;color:var(--muted);font-
   display: none !important;
 }
 
+/* =====================================================
+   BLOG – CARDS, GRID E LINKS (AJUSTE VISUAL)
+   ===================================================== */
+
+/* Grid mais leve e responsivo */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+/* Card do post */
+.blog-card {
+  background: rgba(255,255,255,0.45);
+  padding: 14px;
+  border-radius: 14px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  text-decoration: none;
+  color: inherit;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.1);
+}
+
+/* REMOVE sublinhado e azul de TODOS os textos internos */
+.blog-card,
+.blog-card * {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+/* Imagem menor (principal causa do card gigante) */
+.blog-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 6px 0 4px;
+}
+
+/* Categoria */
+.blog-tag {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+/* Título */
+.blog-card h4 {
+  font-size: 16px;
+  line-height: 1.35;
+  margin: 4px 0;
+  color: var(--text-strong);
+}
+
+/* Descrição */
+.blog-card p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* Hover sutil no título */
+.blog-card:hover h4 {
+  color: var(--accent);
+}
+
 
 
