@@ -8,32 +8,6 @@
 <link rel="stylesheet" href="css/styles.css">
 </head>
 
-  <script>
-const filterButtons = document.querySelectorAll(".filter-btn");
-const posts = document.querySelectorAll(".blog-card");
-
-filterButtons.forEach(button => {
-  button.addEventListener("click", () => {
-
-    filterButtons.forEach(btn => btn.classList.remove("active"));
-    button.classList.add("active");
-
-    const filter = button.dataset.filter;
-
-    posts.forEach(post => {
-      const category = post.dataset.category;
-
-      if (filter === "all" || category === filter) {
-        post.style.display = "flex";
-      } else {
-        post.style.display = "none";
-      }
-    });
-
-  });
-});
-</script>
-
 <body>
 
 <div class="wrap">
@@ -121,6 +95,36 @@ filterButtons.forEach(button => {
 
 <script>
 document.getElementById("ano").textContent = new Date().getFullYear();
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const posts = document.querySelectorAll(".blog-card");
+
+  filterButtons.forEach(button => {
+    button.addEventListener("click", function () {
+
+      // remove active de todos
+      filterButtons.forEach(btn => btn.classList.remove("active"));
+      this.classList.add("active");
+
+      const filter = this.dataset.filter;
+
+      posts.forEach(post => {
+        const category = post.dataset.category;
+
+        if (filter === "all" || category === filter) {
+          post.style.display = "flex";
+        } else {
+          post.style.display = "none";
+        }
+      });
+
+    });
+  });
+
+});
 </script>
 
 </body>
