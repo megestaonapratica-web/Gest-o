@@ -282,4 +282,22 @@ footer{margin-top:28px;padding:18px 0;text-align:center;color:var(--muted);font-
 }
 
 
+.post-image {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  margin: 30px auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.post-container {
+  overflow: visible !important;
+}
+
+.post-article {
+  display: block !important;
+}
+
 
