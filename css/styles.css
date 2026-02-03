@@ -373,6 +373,14 @@ footer{margin-top:28px;padding:18px 0;text-align:center;color:var(--muted);font-
   color: var(--muted);
 }
 
+.author-box {
+  margin-top: 48px;
+  padding: 20px;
+  border-top: 1px solid #eee;
+  font-size: 0.95rem;
+  color: #444;
+}
+
 
 
 
