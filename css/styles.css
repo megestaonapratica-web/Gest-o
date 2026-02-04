@@ -381,6 +381,36 @@ footer{margin-top:28px;padding:18px 0;text-align:center;color:var(--muted);font-
   color: #444;
 }
 
+.videos-home {
+  padding: 60px 20px;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+.videos-home h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.videos-home p {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  color: #555;
+}
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.video-item {
+  background: #fff;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
 
 
 
