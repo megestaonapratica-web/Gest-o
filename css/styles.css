@@ -217,8 +217,11 @@ footer{margin-top:28px;padding:18px 0;text-align:center;color:var(--muted);font-
 /* Imagem menor (principal causa do card gigante) */
 .blog-image {
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  aspect-ratio: 16 / 9;
+  min-height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
 }
 
 /* Categoria */
@@ -408,6 +411,7 @@ footer{margin-top:28px;padding:18px 0;text-align:center;color:var(--muted);font-
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
+
 
 
 
