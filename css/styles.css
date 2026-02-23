@@ -218,10 +218,10 @@ footer{margin-top:28px;padding:18px 0;text-align:center;color:var(--muted);font-
 .blog-image {
   width: 100%;
   aspect-ratio: 16 / 9;
-  min-height: 500px;
-  object-fit: cover;
-  border-radius: 10px;
-  display: block;
+  min-height: 300px;
+ object-fit: cover;
+  object-position: top; /* MOSTRA O ROSTO */
+  border-radius: 12px;
 }
 
 /* Categoria */
@@ -411,6 +411,7 @@ footer{margin-top:28px;padding:18px 0;text-align:center;color:var(--muted);font-
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
+
 
 
 
